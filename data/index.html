@@ -55,17 +55,21 @@
 		});
 	}
 
-	// It may be better to call addMarkers and removeMarkers for speed.
+	// Calling addMarkers and removeMarkers is much faster than calling
+	// addMarker and removeMarker n times. This is probably because each add/remove
+	// causes the map to rerender, instead of only rerendering once.
 	function updateSpeciesMarkers(button, name) {
-		for (m of markers) {
+		var toChange = [];
+		for (let m of markers) {
 			if (m['label'] == name) {
-				if (button.checked) {
-					markerCluster.addMarker(m);
-				}
-				else {
-					markerCluster.removeMarker(m);
-				}
+				toChange.push(m)
 			}
+		}
+		if (button.checked) {
+			markerCluster.addMarkers(toChange);
+		}
+		else {
+			markerCluster.removeMarkers(toChange);
 		}
 	}
 

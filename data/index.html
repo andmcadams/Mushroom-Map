@@ -55,6 +55,7 @@
 		});
 	}
 
+	// It may be better to call addMarkers and removeMarkers for speed.
 	function updateSpeciesMarkers(button, name) {
 		for (m of markers) {
 			if (m['label'] == name) {
@@ -136,7 +137,18 @@
 
 			speciesDiv.appendChild(button);
 			speciesDiv.appendChild(nameLabel);
-			speciesButtons.appendChild(speciesDiv);
+			genusDiv = document.getElementById(splitName[0]);
+			if (genusDiv == null) {
+				genusDiv = document.createElement("div");
+				genusDiv.id = splitName[0];
+				genusLabel = document.createElement("label");
+				genusLabel.innerHTML = splitName[0];
+				genusLabel.id = "genuslabel"
+
+				genusDiv.appendChild(genusLabel);
+				speciesButtons.appendChild(genusDiv);
+			}
+			genusDiv.appendChild(speciesDiv);
 		}
 
 	}

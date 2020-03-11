@@ -1,0 +1,24 @@
+div#container {
+	height:100%;
+	width: 100%;
+	margin: auto auto;
+}
+/* Always set the map height explicitly to define the size of the div
+* element that contains the map. */
+div#map {
+	height: 100%;
+	width: 80%;
+	float: left;
+}
+
+div#sidebar {
+	height: 100%;
+	width: 20%;
+	float: right;
+}
+
+/* Optional: Makes the sample page fill the window. */
+html, body {
+	height: 100%;
+	margin: auto auto;
+}

@@ -132,6 +132,7 @@
 				second = "sp.";
 			}
 			speciesDiv.id = name;
+			speciesDiv.className = "speciesdiv";
 			nameLabel = document.createElement("label");
 			nameLabel.innerHTML = first + " " + second;
 			let button = document.createElement("input");
@@ -145,11 +146,23 @@
 			if (genusDiv == null) {
 				genusDiv = document.createElement("div");
 				genusDiv.id = splitName[0];
-				genusLabel = document.createElement("label");
+				genusDiv.className = "genusdiv";
+				genusDiv.style.display = "block";
+				genusLabel = document.createElement("button");
 				genusLabel.innerHTML = splitName[0];
-				genusLabel.id = "genuslabel"
-
-				genusDiv.appendChild(genusLabel);
+				genusLabel.className = "genuslabel active"
+				genusLabel.addEventListener("click", function(){
+					this.classList.toggle("active");
+					content = this.nextElementSibling;
+					console.log(content.style.display);
+					if (content.style.display == "block") {
+						content.style.display = "none";
+					} 
+					else {
+						content.style.display = "block";
+					}
+				});
+				speciesButtons.appendChild(genusLabel);
 				speciesButtons.appendChild(genusDiv);
 			}
 			genusDiv.appendChild(speciesDiv);

@@ -17,6 +17,26 @@ div#sidebar {
 	float: right;
 }
 
+.genuslabel {
+	font-size: 20px;
+	display: block;
+	margin: 0 0;
+}
+
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .genuslabel:hover {
+  background-color: #ccc;
+}
+
+/* Style the collapsible content. Note: hidden by default */
+.genusdiv {
+  padding: 0 18px;
+  display: block;
+  overflow: hidden;
+  background-color: #f1f1f1;
+}
+
 /* Optional: Makes the sample page fill the window. */
 html, body {
 	height: 100%;

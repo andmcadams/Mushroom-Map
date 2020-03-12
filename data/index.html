@@ -142,30 +142,38 @@
 
 			speciesDiv.appendChild(button);
 			speciesDiv.appendChild(nameLabel);
-			genusDiv = document.getElementById(splitName[0]);
-			if (genusDiv == null) {
-				genusDiv = document.createElement("div");
-				genusDiv.id = splitName[0];
-				genusDiv.className = "genusdiv";
-				genusDiv.style.display = "block";
-				genusLabel = document.createElement("button");
+			innerContent = document.getElementById(splitName[0]);
+			if (innerContent == null) {
+				let wrapCollapsible = document.createElement("div");
+				wrapCollapsible.className = "wrap-collapsible";
+
+				let collapsibleInput = document.createElement("input");
+				collapsibleInput.id = "collapsible" + splitName[0];
+				collapsibleInput.className = "toggle";
+				collapsibleInput.type = "checkbox";
+				collapsibleInput.checked = true;
+
+				let genusLabel = document.createElement("label");
 				genusLabel.innerHTML = splitName[0];
-				genusLabel.className = "genuslabel active"
-				genusLabel.addEventListener("click", function(){
-					this.classList.toggle("active");
-					content = this.nextElementSibling;
-					console.log(content.style.display);
-					if (content.style.display == "block") {
-						content.style.display = "none";
-					} 
-					else {
-						content.style.display = "block";
-					}
-				});
-				speciesButtons.appendChild(genusLabel);
-				speciesButtons.appendChild(genusDiv);
+				genusLabel.setAttribute("for", "collapsible" + splitName[0]);
+				genusLabel.className = "lbl-toggle";
+
+				let genusDiv = document.createElement("div");
+				genusDiv.className = "collapsible-content";
+
+				innerContent = document.createElement("div");
+				innerContent.id = splitName[0];
+				innerContent.className = "content-inner";
+
+
+
+				genusDiv.appendChild(innerContent);
+				wrapCollapsible.appendChild(collapsibleInput);
+				wrapCollapsible.appendChild(genusLabel);
+				wrapCollapsible.appendChild(genusDiv);
+				speciesButtons.appendChild(wrapCollapsible);
 			}
-			genusDiv.appendChild(speciesDiv);
+			innerContent.appendChild(speciesDiv);
 		}
 
 	}

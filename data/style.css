@@ -1,44 +1,93 @@
-div#container {
+#container {
 	height:100%;
 	width: 100%;
 	margin: auto auto;
 }
 /* Always set the map height explicitly to define the size of the div
 * element that contains the map. */
-div#map {
-	height: 100%;
-	width: 80%;
+#map {
+	height: 97%;
+	width: 85%;
 	float: left;
+	border: 1px solid black;
 }
 
-div#sidebar {
+#sidebar {
 	height: 100%;
-	width: 20%;
-	float: right;
+	overflow: hidden;
 }
 
-.genuslabel {
-	font-size: 20px;
-	display: block;
-	margin: 0 0;
+#titlebar {
+	height: 3%;
+	font-size: 2rem;
 }
 
-
-/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
-.active, .genuslabel:hover {
-  background-color: #ccc;
-}
-
-/* Style the collapsible content. Note: hidden by default */
-.genusdiv {
-  padding: 0 18px;
-  display: block;
-  overflow: hidden;
-  background-color: #f1f1f1;
-}
-
-/* Optional: Makes the sample page fill the window. */
 html, body {
 	height: 100%;
 	margin: auto auto;
+}
+
+input[type='checkbox'][class='toggle'] {
+  display: none;
+}
+
+.lbl-toggle {
+  display: block;
+
+  font-weight: bold;
+  font-family: monospace;
+  font-size: 1rem;
+  text-align: left;
+
+  padding: 0.5rem;
+
+  color: #0E1116;
+  background: #8A7968;
+
+  cursor: pointer;
+
+  transition: all 0.1s ease-out;
+}
+
+.lbl-toggle:hover {
+  color: #23262B;
+}
+
+.lbl-toggle::before {
+  content: ' ';
+  display: inline-block;
+
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 5px solid currentColor;
+  vertical-align: middle;
+  margin-right: .7rem;
+  transform: translateY(-2px);
+
+  transition: transform .1s ease-out;
+}
+
+.toggle:checked + .lbl-toggle::before {
+  transform: rotate(90deg) translateX(-3px);
+}
+
+.collapsible-content {
+  max-height: 0px;
+  overflow: hidden;
+  transition: max-height .1s ease-in-out;
+}
+
+.toggle:checked + .lbl-toggle + .collapsible-content {
+  max-height: 100vh;
+}
+
+.toggle:checked + .lbl-toggle {
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.collapsible-content .content-inner {
+  background: rgba(138, 121, 104, .2);
+  border-bottom: 1px solid rgba(138, 121, 104, .45);
+  padding: .5rem 1rem;
 }

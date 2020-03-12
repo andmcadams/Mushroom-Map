@@ -1,26 +1,42 @@
 #container {
-	height:100%;
-	width: 100%;
+  height:100%;
+  width: 100%;
 	margin: auto auto;
+}
+
+#titlebar {
+  height: 3%;
+  font-size: 2rem;
+}
+
+#subcontainer {
+  height:97%;
+  overflow: hidden;
 }
 /* Always set the map height explicitly to define the size of the div
 * element that contains the map. */
 #map {
-	height: 97%;
+  height: 100%;
 	width: 85%;
 	float: left;
 	border: 1px solid black;
 }
 
 #sidebar {
-	height: 100%;
-	overflow: hidden;
+  height: 100%;
+	overflow: scroll;
+  border: 1px solid black;
+  margin-bottom: 1px;
 }
 
-#titlebar {
-	height: 3%;
-	font-size: 2rem;
+#sidebar::-webkit-scrollbar {
+  display: none;
 }
+
+#sidebar {
+  -ms-overflow-style: none;
+}
+
 
 html, body {
 	height: 100%;

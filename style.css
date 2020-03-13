@@ -12,20 +12,24 @@
 .subcontainer {
   height:97%;
   overflow: hidden;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  border: 1px solid black;
 }
+
 /* Always set the map height explicitly to define the size of the div
 * element that contains the map. */
 .mapbox {
   height: 100%;
 	width: 85%;
 	float: left;
-	border: 1px solid black;
+	border-right: 1px solid black;
 }
 
 .sidebar {
   height: 100%;
 	overflow: scroll;
-  border: 1px solid black;
   background: rgba(138, 121, 104, .2);
   -ms-overflow-style: none;
 }
@@ -38,26 +42,27 @@
   display: none;
 }
   
-select {
+.monthselect {
     outline: none;
     background: transparent;
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    border-radius: 0;
     display: block;
     width: 100%;
     padding: 12px 55px 15px 15px;
     font-size: 1rem;
     color: #0E1116;
-
-    border-color: black;
-    border-bottom: 2px solid black;
+    border: none;
     font-weight: bold;
 }
 
-select:hover {
+.monthselect:hover {
   background-color: rgba(0, 0, 0, 0.1);
+}
+
+.speciesbuttons {
+  border-top: 1px solid black;
 }
 
 html, body {

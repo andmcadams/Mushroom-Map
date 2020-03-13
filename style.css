@@ -53,6 +53,7 @@ select {
     padding: 12px 55px 15px 15px;
     font-size: 1rem;
     color: #0E1116;
+
     border-color: black;
     border-bottom: 2px solid black;
     font-weight: bold;
@@ -130,7 +131,7 @@ input[type='checkbox'][class='toggle'] {
 }
 
 .collapsible-content .content-inner {
-  background: rgba(138, 121, 104, .2);
+  background: transparent;
   border-bottom: 1px solid rgba(138, 121, 104, .45);
   padding: .5rem 1rem;
 }

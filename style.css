@@ -26,7 +26,7 @@
   height: 100%;
 	overflow: scroll;
   border: 1px solid black;
-  margin-bottom: 1px;
+  background: rgba(138, 121, 104, .2);
 }
 
 #sidebar::-webkit-scrollbar {
@@ -37,10 +37,38 @@
   -ms-overflow-style: none;
 }
 
+.custom-select {
+  display: none;
+}
+  
+select {
+    outline: none;
+    background: transparent;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 0;
+    display: block;
+    width: 100%;
+    padding: 12px 55px 15px 15px;
+    font-size: 1rem;
+    color: #0E1116;
+    border-color: black;
+    border-bottom: 2px solid black;
+    font-weight: bold;
+}
+
+select:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
 
 html, body {
 	height: 100%;
 	margin: auto auto;
+}
+
+body {
+    font-family: "Arial", monospace;
 }
 
 input[type='checkbox'][class='toggle'] {
@@ -51,7 +79,6 @@ input[type='checkbox'][class='toggle'] {
   display: block;
 
   font-weight: bold;
-  font-family: monospace;
   font-size: 1rem;
   text-align: left;
 
@@ -62,7 +89,7 @@ input[type='checkbox'][class='toggle'] {
 
   cursor: pointer;
 
-  transition: all 0.1s ease-out;
+  transition: all 0.2s ease-out;
 }
 
 .lbl-toggle:hover {
@@ -80,7 +107,7 @@ input[type='checkbox'][class='toggle'] {
   margin-right: .7rem;
   transform: translateY(-2px);
 
-  transition: transform .1s ease-out;
+  transition: transform .2s ease-out;
 }
 
 .toggle:checked + .lbl-toggle::before {
@@ -90,7 +117,7 @@ input[type='checkbox'][class='toggle'] {
 .collapsible-content {
   max-height: 0px;
   overflow: hidden;
-  transition: max-height .1s ease-in-out;
+  transition: max-height .2s ease-in-out;
 }
 
 .toggle:checked + .lbl-toggle + .collapsible-content {
@@ -106,4 +133,8 @@ input[type='checkbox'][class='toggle'] {
   background: rgba(138, 121, 104, .2);
   border-bottom: 1px solid rgba(138, 121, 104, .45);
   padding: .5rem 1rem;
+}
+
+.speciesname {
+  text-align: left;
 }

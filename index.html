@@ -16,8 +16,10 @@
   	<div id="subcontainer">
 		<div id="map"></div>
 		<div id="sidebar">
-			<select id="months" onchange="updateMap()">
-				<option selected value='01'>Janaury</option>
+			<label for="monthSelector" class="custom-select"></label>
+			<select id="monthSelector" class="monthselect" onchange="updateMap()">
+				<option value='' selected disabled>Select a month...</option>
+				<option value='01'>Janaury</option>
 				<option value='02'>February</option>
 				<option value='03'>March</option>
 				<option value='04'>April</option>
@@ -78,9 +80,10 @@
 	function updateMap() {
 		if (locations == null)
 			return;
-		var month = document.getElementById('months');
+		var month = document.getElementById('monthSelector');
 		month = month.options[month.selectedIndex].value;
-
+		if (month == '')
+			return;
 		var nameSet = new Set();
 		var sublocs = []
 		for (loc of locations) {
@@ -137,6 +140,7 @@
 			speciesDiv.className = "speciesdiv";
 			nameLabel = document.createElement("label");
 			nameLabel.innerHTML = first + " " + second;
+			nameLabel.className = "speciesname";
 			let button = document.createElement("input");
 			button.type = "checkbox";
 			button.checked = true;

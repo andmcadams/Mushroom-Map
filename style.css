@@ -2,20 +2,23 @@
   height:100%;
   width: 100%;
 	margin: auto auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .titlebar {
-  height: 3%;
+  width: 100%;
   font-size: 2rem;
 }
 
 .subcontainer {
-  height:97%;
+  height:100%;
   overflow: hidden;
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   border: 1px solid black;
+  flex-grow: 1;
 }
 
 /* Always set the map height explicitly to define the size of the div
@@ -50,7 +53,7 @@
     appearance: none;
     display: block;
     width: 100%;
-    padding: 12px 55px 15px 15px;
+    padding: 12px 12px 15px 15px;
     font-size: 1rem;
     color: #0E1116;
     border: none;

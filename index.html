@@ -12,10 +12,10 @@
   </head>
   <body>
   <div class="container">
-  	<div class="titlebar">Mushroom Map</div>
+  	<div class="titlebar">Mushroom Map<label for="mobiletoggle" class="mobile-toggle">≡</label><input id="mobiletoggle" class="mobiletoggle" type="checkbox" onchange="changeMaxHeight()"></input></div>
   	<div class="subcontainer">
 		<div id="map" class="mapbox"></div>
-		<div class="sidebar">
+		<div id="sidebar" class="sidebar">
 			<label for="monthSelector" class="custom-select"></label>
 			<select id="monthSelector" class="monthselect" onchange="updateMap()">
 				<option value='' selected disabled>Select a month...</option>
@@ -37,7 +37,14 @@
 	</div>
   </div>
 	<script>
-
+	function changeMaxHeight() {
+		var sidebar = document.getElementById("sidebar");
+		var computedStyle = getComputedStyle(sidebar, null).maxHeight
+		if (computedStyle == "0px")
+			sidebar.style.maxHeight = "100vh";
+		else
+			sidebar.style.maxHeight = "0px"
+	}
 	// Init these "global" vars
 	var map, markers, markerCluster;
 	var locations = [];
@@ -182,7 +189,6 @@
 		}
 
 	}
-
 	</script>
 	<!-- Replace following script src -->
 	<script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclustererplus@4.0.1.min.js">

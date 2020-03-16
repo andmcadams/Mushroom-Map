@@ -3,7 +3,7 @@
   <head>
 	<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
 	<meta charset="utf-8">
-	<title>Marker Clustering</title>
+	<title>Mushroom Map</title>
 	<link rel="stylesheet" href="style.css">
 	<script src="https://d3js.org/d3-dsv.v1.min.js"></script>
 	<script src="https://d3js.org/d3-fetch.v1.min.js"></script>
@@ -12,7 +12,7 @@
   </head>
   <body>
   <div class="container">
-  	<div class="titlebar">Mushroom Map<label for="mobiletoggle" class="mobile-toggle">≡</label><input id="mobiletoggle" class="mobiletoggle" type="checkbox" onchange="changeMaxHeight()"></input></div>
+  	<div class="titlebar"><div class="titlelabeldiv"><label class="titlelabel">Mushroom Map</label></div><label for="mobiletoggle" class="mobile-toggle">≡</label><input id="mobiletoggle" class="mobiletoggle" type="checkbox" onchange="changeMaxHeight()"></input></div>
   	<div class="subcontainer">
 		<div id="map" class="mapbox"></div>
 		<div id="sidebar" class="sidebar">

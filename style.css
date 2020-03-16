@@ -29,7 +29,7 @@
 * element that contains the map. */
 .mapbox {
   height: 100%;
-	width: 85%;
+	width: 75%;
 	float: left;
 	border-right: 1px solid black;
 }
@@ -50,15 +50,38 @@
 }
 
 @media only screen and (max-width: 600px) {
-  .mobiletoggle {
-    display: inline;
-    float: right;
-    font-family: "Arial", monospace;
+  .subcontainer {
+    border: none;
+  }
+
+  .titlebar {
+    display: flex;
+    flex-direction: row;
+    background: #B8AEA5;
+    z-index: 2;
+  }
+
+  .titlelabeldiv {
+    width: 80%;
+    height:100%;
+    padding-left: 2%;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+  }
+
+  .titlelabel {
     font-size: 2rem;
-    font-weight: bold;
-    line-height: 2rem;
-    vertical-align: middle;
+  }
+
+  .mobile-toggle {
+    display: inline-block;
+    font-size: 3rem;
     transition: all 0.2s ease-out;
+    text-align: center;
+    background: transparent;
+    border: 1px solid black;
+    flex-grow: 1;
   }
 
   .mapbox {
@@ -70,46 +93,16 @@
     float: left;
     position: absolute;
     width: 100%;
-    background: rgba(138, 121, 104, 1);
+    background: rgba(232, 228, 225, 1);
     max-height: 0px;
     overflow: hidden;
     transform: translateY(-2px);
     transition: max-height .2s ease-in-out;
-    z-index: 10;
+    z-index: 1;
   }
 
   input[type='checkbox'][class='mobiletoggle'] {
     display: none;
-  }
-
-  .mobile-toggle {
-    display: inline;
-
-    font-weight: bold;
-    font-size: 1rem;
-    text-align: left;
-
-    padding: 0.5rem;
-
-    color: #0E1116;
-    background: #8A7968;
-
-    cursor: pointer;
-
-    transition: all 0.2s ease-out;
-  }
-
-  .mobile-toggle:hover {
-    color: #23262B;
-  }
-
-  .mobiletoggle:checked ~.sidebar {
-    max-height: 100vh;
-  }
-
-  .mobiletoggle:checked + .mobile-toggle {
-    border-bottom-right-radius: 0;
-    border-bottom-left-radius: 0;
   }
 }
 

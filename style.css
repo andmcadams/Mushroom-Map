@@ -71,6 +71,7 @@
   }
 
   .titlelabel {
+    display: inline-block;
     font-size: 2rem;
     line-height: 3rem;
     vertical-align: middle;

@@ -98,6 +98,7 @@
     overflow: hidden;
     transform: translateY(-2px);
     transition: max-height .2s ease-in-out;
+    overflow-y: scroll;
     z-index: 1;
   }
 

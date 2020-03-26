@@ -9,6 +9,7 @@
 .titlebar {
   width: 100%;
   font-size: 2rem;
+  background: rgba(232, 228, 225, 1);
 }
 
 .mobiletoggle {
@@ -37,7 +38,7 @@
 .sidebar {
   height: 100%;
   overflow: scroll;
-  background: rgba(138, 121, 104, .2);
+  background: rgba(232, 228, 225, 1);
   -ms-overflow-style: none;
 }
 
@@ -57,7 +58,7 @@
   .titlebar {
     display: flex;
     flex-direction: row;
-    background: #B8AEA5;
+    border-bottom: 1px solid black;
     z-index: 2;
   }
 
@@ -84,6 +85,7 @@
     text-align: center;
     background: transparent;
     border: 1px solid black;
+    border-bottom: none;
     flex-grow: 1;
   }
 
@@ -96,7 +98,6 @@
     float: left;
     position: absolute;
     width: 100%;
-    background: rgba(232, 228, 225, 1);
     max-height: 0px;
     overflow: hidden;
     transform: translateY(-2px);
